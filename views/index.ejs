@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Perfil</title>
+  <% include partials/head %>
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="text-center" style="color: white;">Mi Perfil</h1>
+    <hr style="background-color: white;">
+    <div class="d-flex justify-content-center">
+      <div class="card" style="max-width: 22rem;">
+        <img class="card-img-top" src="/img/user.png" alt="">
+        <div class="card-body">
+          <h3 class="card-title text-center">
+            <%= user.nombre%>
+          </h3>
+          <strong>Telefono: </strong>
+          <span class="card-text">
+            <%= user.telefono%>
+          </span> <br>
+          <strong>Correo: </strong>
+          <span class="card-text">
+            <%= user.email%>
+          </span> <br>
+          <strong>Contraseña: </strong>
+          <p class="card-text">
+            <%= user.password%>
+          </p> <br>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <form action="/logout?_method=DELETE" method="POST">
+    <button class="btn btn-secondary" type="submit">Cerrar Sesión</button>
+  </form>
+</body>
+
+</html>
